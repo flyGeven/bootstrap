@@ -20,10 +20,11 @@
   }
 
   var btnToggleDarkMode = document.querySelector('.bd-toggle-dark-mode')
-  var isDarkModeEnabledOnLoad = localStorage.getItem('bs-docs-dark-mode') === '1' ||
+  var bsDocsDarkModeLS = localStorage.getItem('bs-docs-dark-mode')
+  var isDarkModeEnabledOnLoad = bsDocsDarkModeLS === '1' ||
                                   (window.matchMedia('(prefers-color-scheme: dark)').matches === true &&
-                                  (localStorage.getItem('bs-docs-dark-mode') === null ||
-                                    localStorage.getItem('bs-docs-dark-mode') === 0
+                                  (bsDocsDarkModeLS === null ||
+                                    bsDocsDarkModeLS === 0
                                   ))
 
   if (isDarkModeEnabledOnLoad) {
